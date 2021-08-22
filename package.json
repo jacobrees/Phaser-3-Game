@@ -36,5 +36,8 @@
     "> 1%",
     "iOS 7",
     "last 3 iOS versions"
-  ]
+  ],
+  "dependencies": {
+    "phaser": "^3.55.2"
+  }
 }
