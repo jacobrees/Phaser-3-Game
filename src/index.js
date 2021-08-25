@@ -13,11 +13,11 @@ class PlayGame extends Phaser.Scene {
   }
 
   create() {
-    this.image = this.add.image(400, 300, 'logo');
+    this.image = this.add.image(230, 300, 'logo');
   }
 
   update() {
-    this.image.rotation += 0.01;
+    this.image.rotation += 0.02;
   }
 }
 
