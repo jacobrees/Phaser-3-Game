@@ -1,14 +1,24 @@
 import './styles.scss';
 import Phaser from 'phaser';
 
-function preload() {
+class PlayGame extends Phaser.Scene {
+  constructor() {
+    super('PlayGame');
+  }
 
-}
+  preload() {
+    this.load.crossOrigin = true;
+    this.load.baseURL = 'https://labs.phaser.io/';
+    this.load.image('logo', 'assets/sprites/phaser3-logo.png');
+  }
 
-function create() {
-}
+  create() {
+    this.image = this.add.image(400, 300, 'logo');
+  }
 
-function update() {
+  update() {
+    this.image.rotation += 0.01;
+  }
 }
 
 const config = {
@@ -24,11 +34,7 @@ const config = {
   },
   autoCenter: 1,
   scaleMode: 3,
-  scene: {
-    preload,
-    create,
-    update,
-  },
+  scene: PlayGame,
 };
 
 const game = new Phaser.Game(config);
