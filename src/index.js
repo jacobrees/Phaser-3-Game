@@ -14,6 +14,7 @@ class StartScreen extends Phaser.Scene {
     this.load.spritesheet('sun', './assets/sun.png', { frameWidth: 200, frameHeight: 200 });
     this.load.spritesheet('saturn', './assets/saturn.png', { frameWidth: 300, frameHeight: 300 });
     this.load.spritesheet('neptune', './assets/neptune.png', { frameWidth: 100, frameHeight: 100 });
+    this.load.spritesheet('jupiter', './assets/jupiter.png', { frameWidth: 100, frameHeight: 100 });
   }
 
   create() {
@@ -25,6 +26,7 @@ class StartScreen extends Phaser.Scene {
     const saturn = this.add.sprite(390, 400, 'saturn', 0).setScale(2.3);
     const sun = this.add.sprite(0, 700, 'sun', 0).setScale(3);
     const neptune = this.add.sprite(300, 190, 'neptune', 0).setScale(1.8);
+    const jupiter = this.add.sprite(80, 200, 'jupiter').setScale(2.2);
 
     this.anims.create({
       key: 'moonSpin',
@@ -68,12 +70,22 @@ class StartScreen extends Phaser.Scene {
       repeat: -1,
     });
 
+    this.anims.create({
+      key: 'jupiterSpin',
+      frames: this.anims.generateFrameNumbers('jupiter'),
+      frameRate: 3,
+      repeat: -1,
+    });
+
     moon.playReverse('moonSpin');
     earth.play('earthSpin');
     mars.playReverse('marsSpin');
     saturn.play('saturnSpin');
     sun.playReverse('sunSpin');
     neptune.play('neptuneSpin');
+    jupiter.play('jupiterSpin');
+
+    this.add.text(230, 50, 'Space Dodger', { fontSize: '42px' }).setOrigin(0.5);
   }
 }
 
