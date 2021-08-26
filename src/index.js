@@ -25,7 +25,7 @@ class StartScreen extends Phaser.Scene {
     const mars = this.add.sprite(220, 320, 'mars', 0).setScale(1);
     const saturn = this.add.sprite(390, 400, 'saturn', 0).setScale(2.3);
     const sun = this.add.sprite(0, 700, 'sun', 0).setScale(3);
-    const neptune = this.add.sprite(300, 190, 'neptune', 0).setScale(1.8);
+    const neptune = this.add.sprite(340, 170, 'neptune', 0).setScale(1.8);
     const jupiter = this.add.sprite(80, 200, 'jupiter').setScale(2.2);
 
     this.anims.create({
