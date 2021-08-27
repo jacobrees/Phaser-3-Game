@@ -7,14 +7,14 @@ class StartScreen extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', './assets/start-background.png');
+    this.load.image('background', './assets/space-background.png');
     this.load.spritesheet('moon', './assets/moon.png', { frameWidth: 100, frameHeight: 100 });
     this.load.spritesheet('earth', './assets/earth.png', { frameWidth: 100, frameHeight: 100 });
     this.load.spritesheet('mars', './assets/mars.png', { frameWidth: 100, frameHeight: 100 });
   }
 
   create() {
-    this.add.image(230, 300, 'background').setScale(0.4);
+    this.add.image(230, 320, 'background').setScale(1);
 
     const moon = this.add.sprite(290, 380, 'moon', 0).setScale(0.65);
     const earth = this.add.sprite(200, 320, 'earth', 0).setScale(1.42);
