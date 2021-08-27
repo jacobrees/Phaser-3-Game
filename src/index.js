@@ -23,21 +23,21 @@ class StartScreen extends Phaser.Scene {
     this.anims.create({
       key: 'moonSpin',
       frames: this.anims.generateFrameNumbers('moon'),
-      frameRate: 3,
+      frameRate: 8,
       repeat: -1,
     });
 
     this.anims.create({
       key: 'earthSpin',
       frames: this.anims.generateFrameNumbers('earth'),
-      frameRate: 4,
+      frameRate: 11,
       repeat: -1,
     });
 
     this.anims.create({
       key: 'marsSpin',
       frames: this.anims.generateFrameNumbers('mars'),
-      frameRate: 4,
+      frameRate: 10,
       repeat: -1,
     });
 
