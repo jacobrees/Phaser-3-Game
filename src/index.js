@@ -10,7 +10,6 @@ class StartScreen extends Phaser.Scene {
     this.load.image('background', './assets/space-background.png');
     this.load.spritesheet('moon', './assets/moon.png', { frameWidth: 100, frameHeight: 100 });
     this.load.spritesheet('earth', './assets/earth.png', { frameWidth: 100, frameHeight: 100 });
-    this.load.spritesheet('mars', './assets/mars.png', { frameWidth: 100, frameHeight: 100 });
   }
 
   create() {
@@ -18,7 +17,6 @@ class StartScreen extends Phaser.Scene {
 
     const moon = this.add.sprite(290, 380, 'moon', 0).setScale(0.65);
     const earth = this.add.sprite(200, 320, 'earth', 0).setScale(1.42);
-    const mars = this.add.sprite(370, 170, 'mars', 0).setScale(1);
 
     this.anims.create({
       key: 'moonSpin',
@@ -34,16 +32,8 @@ class StartScreen extends Phaser.Scene {
       repeat: -1,
     });
 
-    this.anims.create({
-      key: 'marsSpin',
-      frames: this.anims.generateFrameNumbers('mars'),
-      frameRate: 10,
-      repeat: -1,
-    });
-
     moon.playReverse('moonSpin');
     earth.play('earthSpin');
-    mars.playReverse('marsSpin');
 
     this.add.text(230, 50, 'Space Dodger', { fontSize: '42px' }).setOrigin(0.5);
     this.add.text(230, 580, 'Start', { fontSize: '42px' }).setOrigin(0.5);
