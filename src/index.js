@@ -1,6 +1,8 @@
 import './styles.scss';
 import Phaser from 'phaser';
 
+let background;
+
 class StartScreen extends Phaser.Scene {
   constructor() {
     super({ key: 'StartScreen' });
@@ -8,35 +10,17 @@ class StartScreen extends Phaser.Scene {
 
   preload() {
     this.load.image('background', './assets/space-background.png');
-    this.load.spritesheet('moon', './assets/moon.png', { frameWidth: 100, frameHeight: 100 });
-    this.load.spritesheet('earth', './assets/earth.png', { frameWidth: 100, frameHeight: 100 });
   }
 
   create() {
-    this.add.image(230, 320, 'background').setScale(1);
-
-    const moon = this.add.sprite(290, 380, 'moon', 0).setScale(0.65);
-    const earth = this.add.sprite(200, 320, 'earth', 0).setScale(1.42);
-
-    this.anims.create({
-      key: 'moonSpin',
-      frames: this.anims.generateFrameNumbers('moon'),
-      frameRate: 8,
-      repeat: -1,
-    });
-
-    this.anims.create({
-      key: 'earthSpin',
-      frames: this.anims.generateFrameNumbers('earth'),
-      frameRate: 11,
-      repeat: -1,
-    });
-
-    moon.playReverse('moonSpin');
-    earth.play('earthSpin');
+    background = this.add.tileSprite(230, 320, 460, 640, 'background');
 
     this.add.text(230, 50, 'Space Dodger', { fontSize: '42px' }).setOrigin(0.5);
     this.add.text(230, 580, 'Start', { fontSize: '42px' }).setOrigin(0.5);
+  }
+
+  update() { //eslint-disable-line
+    background.tilePositionY += 1;
   }
 }
 
