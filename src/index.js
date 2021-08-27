@@ -25,7 +25,7 @@ class StartScreen extends Phaser.Scene {
     this.anims.create({
       key: 'rocketFlicker',
       frames: this.anims.generateFrameNumbers('rocket-flicker'),
-      frameRate: 8,
+      frameRate: 10,
       repeat: -1,
     });
 
@@ -33,8 +33,8 @@ class StartScreen extends Phaser.Scene {
   }
 
   update() { //eslint-disable-line
-    background.tilePositionY += 1;
-    background.tilePositionX += 1;
+    background.tilePositionY += 3;
+    background.tilePositionX += 3;
   }
 }
 
