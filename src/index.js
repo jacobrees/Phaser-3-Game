@@ -21,6 +21,7 @@ class StartScreen extends Phaser.Scene {
 
   update() { //eslint-disable-line
     background.tilePositionY += 1;
+    background.tilePositionX += 1;
   }
 }
 
