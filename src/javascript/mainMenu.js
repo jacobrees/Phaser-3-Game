@@ -2,9 +2,9 @@ import Phaser from 'phaser';
 
 let background;
 
-class StartScreen extends Phaser.Scene {
+class MainMenu extends Phaser.Scene {
   constructor() {
-    super({ key: 'StartScreen' });
+    super({ key: 'MainMenu' });
   }
 
   preload() {
@@ -37,4 +37,4 @@ class StartScreen extends Phaser.Scene {
   }
 }
 
-export default StartScreen;
+export default MainMenu;

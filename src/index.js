@@ -1,6 +1,6 @@
 import './styles.scss';
 import Phaser from 'phaser';
-import StartScreen from './javascript/startScreen.js';
+import MainMenu from './javascript/mainMenu.js';
 
 const config = {
   type: Phaser.AUTO,
@@ -15,7 +15,7 @@ const config = {
   },
   autoCenter: 1,
   scaleMode: 3,
-  scene: StartScreen,
+  scene: MainMenu,
 };
 
 const game = new Phaser.Game(config); //eslint-disable-line
