@@ -20,10 +20,10 @@ class MainMenu extends Phaser.Scene {
     this.add.image(230, 320, 'rocket').setScale(0.5).setAngle(135);
     const rocketFlicker = this.add.sprite(130, 220, 'rocket-flicker', 0).setScale(0.25).setAngle(135);
     this.add.bitmapText(230, 50, 'press-start-2p', 'SpaceDodger', 35).setOrigin(0.5);
-    this.add.rectangle(230, 500, 322, 42, 0x6666ff);
-    this.add.bitmapText(230, 500, 'press-start-2p', 'LeaderBoard', 28).setOrigin(0.5).setInteractive({ cursor: 'pointer' });
-    this.add.rectangle(230, 570, 272, 42, 0x6666ff);
-    this.add.bitmapText(230, 570, 'press-start-2p', 'StartGame', 28).setOrigin(0.5).setInteractive({ cursor: 'pointer' });
+    this.add.rectangle(230, 470, 322, 42, 0x6666ff).setInteractive({ cursor: 'pointer' });
+    this.add.bitmapText(230, 470, 'press-start-2p', 'LeaderBoard', 28).setOrigin(0.5);
+    this.add.rectangle(230, 560, 267, 42, 0x6666ff).setInteractive({ cursor: 'pointer' });
+    this.add.bitmapText(230, 560, 'press-start-2p', 'StartGame', 28).setOrigin(0.5);
 
     this.anims.create({
       key: 'rocketFlicker',
@@ -36,8 +36,8 @@ class MainMenu extends Phaser.Scene {
   }
 
   update() { //eslint-disable-line
-    background.tilePositionY += 5;
-    background.tilePositionX += 5;
+    background.tilePositionY += 7;
+    background.tilePositionX += 7;
   }
 }
 
