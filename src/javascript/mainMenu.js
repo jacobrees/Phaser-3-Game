@@ -21,7 +21,7 @@ class MainMenu extends Phaser.Scene {
     const rocketFlicker = this.add.sprite(130, 220, 'rocket-flicker', 0).setScale(0.25).setAngle(135);
     this.add.bitmapText(230, 50, 'press-start-2p', 'SpaceDodger', 35).setOrigin(0.5);
     this.add.bitmapText(230, 500, 'press-start-2p', 'LeaderBoard', 28).setOrigin(0.5).setInteractive({ cursor: 'pointer' });
-    this.add.bitmapText(230, 580, 'press-start-2p', 'StartGame', 28).setOrigin(0.5).setInteractive({ cursor: 'pointer' });
+    this.add.bitmapText(230, 570, 'press-start-2p', 'StartGame', 28).setOrigin(0.5).setInteractive({ cursor: 'pointer' });
 
     this.anims.create({
       key: 'rocketFlicker',
