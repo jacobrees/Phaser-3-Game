@@ -11,6 +11,7 @@ class MainMenu extends Phaser.Scene {
     this.load.image('background', './assets/img/space-background.png');
     this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 582 });
     this.load.image('rocket', './assets/img/rocket.png');
+    this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
   }
 
   create() {
@@ -18,8 +19,8 @@ class MainMenu extends Phaser.Scene {
 
     this.add.image(230, 320, 'rocket').setScale(0.5).setAngle(135);
     const rocketFlicker = this.add.sprite(130, 220, 'rocket-flicker', 0).setScale(0.25).setAngle(135);
-    this.add.text(230, 50, 'Space Dodger', { fontSize: '42px' }).setOrigin(0.5);
-    this.add.text(230, 580, 'Start', { fontSize: '42px' }).setOrigin(0.5);
+    this.add.bitmapText(230, 50, 'press-start-2p', 'SpaceDodger', 32).setOrigin(0.5);
+    this.add.bitmapText(230, 580, 'press-start-2p', 'Start', 32).setOrigin(0.5);
 
     this.anims.create({
       key: 'rocketFlicker',
