@@ -34,8 +34,8 @@ class MainMenu extends Phaser.Scene {
   }
 
   update() { //eslint-disable-line
-    background.tilePositionY += 3;
-    background.tilePositionX += 3;
+    background.tilePositionY += 3.3;
+    background.tilePositionX += 3.3;
   }
 }
 
