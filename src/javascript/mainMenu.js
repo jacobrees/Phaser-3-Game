@@ -8,9 +8,9 @@ class MainMenu extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', './assets/space-background.png');
-    this.load.spritesheet('rocket-flicker', './assets/rocket-flicker.png', { frameWidth: 256, frameHeight: 582 });
-    this.load.image('rocket', './assets/rocket.png');
+    this.load.image('background', './assets/img/space-background.png');
+    this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 582 });
+    this.load.image('rocket', './assets/img/rocket.png');
   }
 
   create() {
