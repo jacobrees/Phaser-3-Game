@@ -9,7 +9,7 @@ class MainMenu extends Phaser.Scene {
 
   preload() {
     this.load.image('background', './assets/img/space-background.png');
-    this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 582 });
+    this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 581 });
     this.load.image('rocket', './assets/img/rocket.png');
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
   }
@@ -34,8 +34,8 @@ class MainMenu extends Phaser.Scene {
   }
 
   update() { //eslint-disable-line
-    background.tilePositionY += 3.3;
-    background.tilePositionX += 3.3;
+    background.tilePositionY += 5;
+    background.tilePositionX += 5;
   }
 }
 
