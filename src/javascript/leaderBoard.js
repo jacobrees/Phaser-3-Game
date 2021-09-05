@@ -16,7 +16,7 @@ class LeaderBoard extends Phaser.Scene {
 
     this.add.bitmapText(230, 50, 'press-start-2p', 'LeaderBoard', 35).setOrigin(0.5);
 
-    this.add.rectangle(230, 560, 245, 42, 0x6666ff).setInteractive({ cursor: 'pointer' })
+    this.add.rectangle(230, 560, 255, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
       .on('pointerdown', () => {
         this.scene.start('MainMenu');
       });

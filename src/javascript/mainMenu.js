@@ -23,13 +23,13 @@ class MainMenu extends Phaser.Scene {
 
     this.add.bitmapText(230, 50, 'press-start-2p', 'SpaceDodger', 35).setOrigin(0.5);
 
-    this.add.rectangle(230, 470, 322, 42, 0x6666ff).setInteractive({ cursor: 'pointer' })
+    this.add.rectangle(230, 470, 332, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
       .on('pointerdown', () => {
         this.scene.start('LeaderBoard');
       });
     this.add.bitmapText(230, 470, 'press-start-2p', 'LeaderBoard', 28).setOrigin(0.5);
 
-    this.add.rectangle(230, 560, 267, 42, 0x6666ff).setInteractive({ cursor: 'pointer' })
+    this.add.rectangle(230, 560, 277, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
       .on('pointerdown', () => {
         this.scene.start('GamePlay');
       });
