@@ -8,16 +8,16 @@ class GamePlay extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', './assets/img/space-background.png');
+    this.load.image('gamePlayBackground', './assets/img/game-play-background.png');
   }
 
   create() {
-    background = this.add.tileSprite(230, 320, 460, 640, 'background');
+    background = this.add.tileSprite(230, 320, 460, 640, 'gamePlayBackground');
     this.add.bitmapText(230, 50, 'press-start-2p', 'GamePlay', 35).setOrigin(0.5);
   }
 
   update() { //eslint-disable-line
-    background.tilePositionY += 7;
+    background.tilePositionY += 20;
   }
 }
 
