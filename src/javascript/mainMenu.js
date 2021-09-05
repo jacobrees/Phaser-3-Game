@@ -8,7 +8,7 @@ class MainMenu extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', './assets/img/main-menu-background.png');
+    this.load.image('background', './assets/img/menu-background.png');
     this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 581 });
     this.load.image('rocket', './assets/img/rocket.png');
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
