@@ -16,9 +16,9 @@ class GamePlay extends Phaser.Scene {
   create() {
     background = this.add.tileSprite(230, 320, 460, 640, 'gamePlayBackground');
 
-    this.add.image(230, 130, 'rocket').setScale(0.25).setAngle(180)
+    const rocket = this.add.image(this.input.mousePointer.x, 130, 'rocket').setScale(0.25).setAngle(180);
 
-    const rocketFlicker = this.add.sprite(230, 60, 'rocket-flicker', 0).setScale(0.13).setAngle(180)
+    const rocketFlicker = this.add.sprite(this.input.mousePointer.x, 60, 'rocket-flicker', 0).setScale(0.13).setAngle(180);
 
     this.anims.create({
       key: 'rocketFlicker',
@@ -28,6 +28,11 @@ class GamePlay extends Phaser.Scene {
     });
 
     rocketFlicker.play('rocketFlicker');
+
+    this.input.on('pointermove', (pointer) => {
+      rocket.x = Phaser.Math.Clamp(pointer.x, 50, 410);
+      rocketFlicker.x = Phaser.Math.Clamp(pointer.x, 50, 410);
+    });
   }
 
   update() { //eslint-disable-line
