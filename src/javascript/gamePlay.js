@@ -16,9 +16,17 @@ class GamePlay extends Phaser.Scene {
   create() {
     background = this.add.tileSprite(230, 320, 460, 640, 'gamePlayBackground');
 
-    const rocket = this.add.image(this.input.mousePointer.x, 130, 'rocket').setScale(0.25).setAngle(180);
+    const setSpawnX = () => {
+      if (this.input.mousePointer.x !== 0){
+        return this.input.mousePointer.x
+      } else {
+        return 230
+      }
+    }
 
-    const rocketFlicker = this.add.sprite(this.input.mousePointer.x, 60, 'rocket-flicker', 0).setScale(0.13).setAngle(180);
+    const rocket = this.add.image(setSpawnX(), 130, 'rocket').setScale(0.25).setAngle(180);
+
+    const rocketFlicker = this.add.sprite(setSpawnX(), 60, 'rocket-flicker', 0).setScale(0.13).setAngle(180);
 
     this.anims.create({
       key: 'rocketFlicker',
