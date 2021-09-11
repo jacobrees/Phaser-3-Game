@@ -24,7 +24,7 @@ class GamePlay extends Phaser.Scene {
     };
 
     const rocket = this.physics.add.image(setSpawnX(), 130, 'rocket').setScale(0.25).setAngle(180);
-    rocket.body.setSize(rocket.width - 330, rocket.height - 170, true).setOffset(167, 135);
+    rocket.body.setSize(rocket.width - 340, rocket.height - 190, true).setOffset(172, 135);
 
     const rocketFlicker = this.add.sprite(setSpawnX(), 60, 'rocket-flicker', 0).setScale(0.13).setAngle(180);
 
