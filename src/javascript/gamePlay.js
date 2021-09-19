@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 
 let background;
+const score = 0;
 
 class GamePlay extends Phaser.Scene {
   constructor() {
@@ -11,6 +12,7 @@ class GamePlay extends Phaser.Scene {
     this.load.image('gamePlayBackground', './assets/img/game-play-background.png');
     this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 581 });
     this.load.image('rocket', './assets/img/rocket.png');
+    this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
   }
 
   create() {
@@ -41,6 +43,8 @@ class GamePlay extends Phaser.Scene {
       rocket.x = Phaser.Math.Clamp(pointer.x, 50, 410);
       rocketFlicker.x = Phaser.Math.Clamp(pointer.x, 50, 410);
     });
+
+    this.add.bitmapText(10, 10, 'press-start-2p', `Score: ${score}`, 18).setOrigin(0);
   }
 
   update() { //eslint-disable-line
