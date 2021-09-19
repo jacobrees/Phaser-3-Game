@@ -44,7 +44,7 @@ class GamePlay extends Phaser.Scene {
       rocketFlicker.x = Phaser.Math.Clamp(pointer.x, 50, 410);
     });
 
-    this.add.bitmapText(10, 10, 'press-start-2p', `Score: ${score}`, 18).setOrigin(0);
+    this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 20).setOrigin(0);
   }
 
   update() { //eslint-disable-line
