@@ -46,7 +46,7 @@ class GamePlay extends Phaser.Scene {
       rocketFlicker.x = Phaser.Math.Clamp(pointer.x, 50, 410);
     });
 
-    star = this.physics.add.image(230, 430, 'star').setScale(0.075);
+    star = this.physics.add.image(230, 730, 'star').setScale(0.075);
     star.body.setSize(star.width - 145, star.height - 145, true).setOffset(75, 75);
     star.setVelocityY(-200);
 
@@ -68,7 +68,7 @@ class GamePlay extends Phaser.Scene {
 
   update() { //eslint-disable-line
     background.tilePositionY += 20;
-    star.angle += 3;
+    star.angle += 1;
   }
 }
 
