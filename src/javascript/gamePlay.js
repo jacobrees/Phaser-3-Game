@@ -52,7 +52,7 @@ class GamePlay extends Phaser.Scene {
 
     const scoreText = this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 20).setOrigin(0);
 
-    const handleCollectStar = (star) => {
+    const handleCollectStar = () => {
       star.destroy();
       score += 10;
       scoreText.text = `Score:${score}`;
