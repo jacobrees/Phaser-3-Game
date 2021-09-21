@@ -52,6 +52,9 @@ class GamePlay extends Phaser.Scene {
     star.body.setSize(star.width - 145, star.height - 145, true).setOffset(75, 75);
     star.setVelocityY(randomNumber(-200, -700));
 
+    const resetBlock = this.add.rectangle(0, -50, 460, 18, 0x6666ff).setOrigin(0);
+    this.physics.add.existing(resetBlock);
+
     const scoreText = this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 20).setOrigin(0);
 
     const resetStarPosition = () => {
@@ -70,6 +73,13 @@ class GamePlay extends Phaser.Scene {
       star,
       rocket,
       handleCollectStar,
+      undefined,
+    );
+
+    this.physics.add.overlap(
+      star,
+      resetBlock,
+      resetStarPosition,
       undefined,
     );
   }
