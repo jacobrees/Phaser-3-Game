@@ -42,9 +42,21 @@ class GamePlay extends Phaser.Scene {
     rocketFlicker.play('rocketFlicker');
 
     this.input.on('pointermove', (pointer) => {
-      rocket.x = Phaser.Math.Clamp(pointer.x, 50, 410);
-      rocketFlicker.x = Phaser.Math.Clamp(pointer.x, 50, 410);
-    });
+      this.tweens.add({
+        targets: rocket,
+        x: Phaser.Math.Clamp(pointer.x, 50, 410),
+        y: 130,
+        duration: 100,
+        ease: 'Sine.easeOut',
+      }, this);
+      this.tweens.add({
+        targets: rocketFlicker,
+        x: Phaser.Math.Clamp(pointer.x, 50, 410),
+        y: 60,
+        duration: 100,
+        ease: 'Sine.easeOut',
+      }, this);
+    }, this);
 
     const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
