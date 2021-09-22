@@ -19,7 +19,7 @@ const config = {
   },
   autoCenter: 1,
   scaleMode: 3,
-  scene: [GamePlay, MainMenu, LeaderBoard, GameSettings, GameOver],
+  scene: [GameOver, GamePlay, MainMenu, LeaderBoard, GameSettings],
 };
 
 const game = new Phaser.Game(config); //eslint-disable-line

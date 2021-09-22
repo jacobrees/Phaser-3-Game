@@ -22,6 +22,12 @@ class GameOver extends Phaser.Scene {
         this.scene.start('MainMenu');
       });
     this.add.bitmapText(230, 560, 'press-start-2p', 'MainMenu', 28).setOrigin(0.5);
+
+    this.add.rectangle(230, 470, 285, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
+      .on('pointerdown', () => {
+        this.scene.start('GamePlay');
+      });
+    this.add.bitmapText(230, 470, 'press-start-2p', 'PlayAgain', 28).setOrigin(0.5);
   }
 
   update() { //eslint-disable-line
