@@ -9,6 +9,7 @@ class LeaderBoard extends Phaser.Scene {
 
   preload() {
     this.load.image('background', './assets/img/menu-background.png');
+    this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
   }
 
   create() {

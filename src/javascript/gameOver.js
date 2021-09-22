@@ -2,9 +2,9 @@ import Phaser from 'phaser';
 
 let background;
 
-class GameSettings extends Phaser.Scene {
+class GameOver extends Phaser.Scene {
   constructor() {
-    super({ key: 'GameSettings' });
+    super({ key: 'GameOver' });
   }
 
   preload() {
@@ -15,7 +15,7 @@ class GameSettings extends Phaser.Scene {
   create() {
     background = this.add.tileSprite(230, 320, 460, 640, 'background');
 
-    this.add.bitmapText(230, 50, 'press-start-2p', 'Settings', 35).setOrigin(0.5);
+    this.add.bitmapText(230, 50, 'press-start-2p', 'GameOver', 35).setOrigin(0.5);
 
     this.add.rectangle(230, 560, 255, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
       .on('pointerdown', () => {
@@ -30,4 +30,4 @@ class GameSettings extends Phaser.Scene {
   }
 }
 
-export default GameSettings;
+export default GameOver;
