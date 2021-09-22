@@ -61,7 +61,7 @@ class GamePlay extends Phaser.Scene {
     const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
     star = this.physics.add.image(randomNumber(50, 410), randomNumber(710, 2500), 'star').setScale(0.075);
-    star.body.setSize(star.width - 145, star.height - 145, true).setOffset(75, 75);
+    star.body.setSize(star.width - 125, star.height - 125, true);
     star.setVelocityY(randomNumber(-200, -700));
 
     const resetBlock = this.add.rectangle(0, -50, 460, 18, 0x6666ff).setOrigin(0);
