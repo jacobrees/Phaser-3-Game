@@ -27,10 +27,10 @@ class GamePlay extends Phaser.Scene {
       return 230;
     };
 
-    const rocket = this.physics.add.image(setRocketSpawnX(), 130, 'rocket').setScale(0.30).setAngle(180);
+    const rocket = this.physics.add.image(setRocketSpawnX(), 130, 'rocket').setScale(0.32).setAngle(180);
     rocket.body.setSize(rocket.width - 350, rocket.height - 200, true).setOffset(178, 135);
 
-    const rocketFlicker = this.add.sprite(setRocketSpawnX(), 45, 'rocket-flicker', 0).setScale(0.16).setAngle(180);
+    const rocketFlicker = this.add.sprite(setRocketSpawnX(), 43, 'rocket-flicker', 0).setScale(0.17).setAngle(180);
 
     this.anims.create({
       key: 'rocketFlicker',
@@ -52,7 +52,7 @@ class GamePlay extends Phaser.Scene {
       this.tweens.add({
         targets: rocketFlicker,
         x: Phaser.Math.Clamp(pointer.x, 50, 410),
-        y: 45,
+        y: 43,
         duration: 100,
         ease: 'Sine.easeOut',
       }, this);
