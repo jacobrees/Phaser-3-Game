@@ -71,7 +71,7 @@ class GamePlay extends Phaser.Scene {
 
     const asteroids = this.physics.add.group({
       key: 'asteroid',
-      repeat: 3,
+      repeat: 2,
       setXY: { x: 230, y: 2500 },
     });
 
