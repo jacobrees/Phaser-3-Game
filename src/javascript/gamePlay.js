@@ -81,7 +81,7 @@ class GamePlay extends Phaser.Scene {
       asteroid.body.setSize(asteroid.width - 320, asteroid.height - 200, true).setOffset(150, -20);
       asteroid.play('asteroid');
       asteroid.x = randomNumber(50, 410);
-      asteroid.y = randomNumber(800, 2500);
+      asteroid.y = randomNumber(950, 2500);
       asteroid.setVelocityY(randomNumber(-200, -1000));
     });
 
@@ -99,7 +99,7 @@ class GamePlay extends Phaser.Scene {
       star.setVelocityY(randomNumber(-200, -700));
     });
 
-    const resetBlock = this.add.rectangle(0, -150, 460, 18, 0x6666ff).setOrigin(0);
+    const resetBlock = this.add.rectangle(0, -300, 460, 18, 0x6666ff).setOrigin(0);
     this.physics.add.existing(resetBlock);
 
     const scoreText = this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 27).setOrigin(0);
@@ -132,7 +132,7 @@ class GamePlay extends Phaser.Scene {
 
     const resetAsteroidPosition = (object, resetAsteroid) => {
       resetAsteroid.x = randomNumber(50, 410);
-      resetAsteroid.y = randomNumber(800, 2500);
+      resetAsteroid.y = randomNumber(950, 2500);
       resetAsteroid.setVelocityY(randomNumber(-200, -1000));
     };
 
