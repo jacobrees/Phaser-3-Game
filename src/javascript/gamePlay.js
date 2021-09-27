@@ -28,10 +28,10 @@ class GamePlay extends Phaser.Scene {
       return 230;
     };
 
-    const rocket = this.physics.add.image(setRocketSpawnX(), 130, 'rocket').setScale(0.33).setAngle(180);
+    const rocket = this.physics.add.image(setRocketSpawnX(), 130, 'rocket').setScale(0.36).setAngle(180);
     rocket.body.setSize(rocket.width - 350, rocket.height - 200, true).setOffset(178, 135);
 
-    const rocketFlicker = this.add.sprite(setRocketSpawnX(), 39, 'rocket-flicker', 0).setScale(0.18).setAngle(180);
+    const rocketFlicker = this.add.sprite(setRocketSpawnX(), 29, 'rocket-flicker', 0).setScale(0.20).setAngle(180);
 
     this.anims.create({
       key: 'rocketFlicker',
@@ -53,7 +53,7 @@ class GamePlay extends Phaser.Scene {
       this.tweens.add({
         targets: rocketFlicker,
         x: Phaser.Math.Clamp(pointer.x, 50, 410),
-        y: 39,
+        y: 29,
         duration: 100,
         ease: 'Sine.easeOut',
       }, this);
@@ -61,7 +61,7 @@ class GamePlay extends Phaser.Scene {
 
     const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-    const asteroid = this.physics.add.sprite(200, 300, 'asteroid', 0).setScale(0.45).setAngle(90);
+    const asteroid = this.physics.add.sprite(200, 300, 'asteroid', 0).setScale(0.48).setAngle(90);
     asteroid.body.setSize(asteroid.width - 320, asteroid.height - 200, true).setOffset(150, -20);
 
     this.anims.create({
@@ -80,7 +80,7 @@ class GamePlay extends Phaser.Scene {
     });
 
     stars.children.iterate((star) => {
-      star.setScale(0.075);
+      star.setScale(0.085);
       star.body.setSize(star.width - 125, star.height - 125, true);
       star.setVelocityY(randomNumber(-200, -700));
       star.x = randomNumber(50, 410);
@@ -90,7 +90,7 @@ class GamePlay extends Phaser.Scene {
     const resetBlock = this.add.rectangle(0, -50, 460, 18, 0x6666ff).setOrigin(0);
     this.physics.add.existing(resetBlock);
 
-    const scoreText = this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 25).setOrigin(0);
+    const scoreText = this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 27).setOrigin(0);
 
     const resetStarPosition = (object, resetStar) => {
       resetStar.x = randomNumber(50, 410);
