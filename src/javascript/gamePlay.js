@@ -9,10 +9,6 @@ class GamePlay extends Phaser.Scene {
     super({ key: 'GamePlay' });
   }
 
-  init() {
-    score = 0;
-  }
-
   preload() {
     this.load.image('gamePlayBackground', './assets/img/game-play-background.png');
     this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 581 });
@@ -23,6 +19,7 @@ class GamePlay extends Phaser.Scene {
   }
 
   create() {
+    score = 0;
     background = this.add.tileSprite(230, 320, 460, 640, 'gamePlayBackground');
 
     const setRocketSpawnX = () => {
@@ -140,7 +137,7 @@ class GamePlay extends Phaser.Scene {
     };
 
     const gameOver = () => {
-      this.scene.start('GameOver');
+      this.scene.start('GameOver', `${score}`);
     };
 
     this.physics.add.overlap(
