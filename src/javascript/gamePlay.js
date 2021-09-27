@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 
 let background;
-let star;
+let stars;
 let score = 0;
 
 class GamePlay extends Phaser.Scene {
@@ -60,45 +60,59 @@ class GamePlay extends Phaser.Scene {
 
     const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-    star = this.physics.add.image(randomNumber(50, 410), randomNumber(710, 2500), 'star').setScale(0.075);
-    star.body.setSize(star.width - 125, star.height - 125, true);
-    star.setVelocityY(randomNumber(-200, -700));
+    stars = this.physics.add.group({
+      key: 'star',
+      repeat: 1,
+      setXY: { x: 230, y: 2500 },
+    });
+
+    stars.children.iterate((star) => {
+      star.setScale(0.075);
+      star.body.setSize(star.width - 125, star.height - 125, true);
+      star.setVelocityY(randomNumber(-200, -700));
+      star.x = randomNumber(50, 410);
+      star.y = randomNumber(800, 2500);
+    });
 
     const resetBlock = this.add.rectangle(0, -50, 460, 18, 0x6666ff).setOrigin(0);
     this.physics.add.existing(resetBlock);
 
     const scoreText = this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 25).setOrigin(0);
 
-    const resetStarPosition = () => {
-      star.x = randomNumber(50, 410);
-      star.y = randomNumber(710, 2500);
-      star.setVelocityY(randomNumber(-200, -700));
+    const resetStarPosition = (object, resetStar) => {
+      resetStar.x = randomNumber(50, 410);
+      resetStar.y = randomNumber(800, 2500);
+      resetStar.setVelocityY(randomNumber(-200, -700));
     };
 
-    const handleCollectStar = () => {
-      resetStarPosition();
+    const handleCollectStar = (object, resetStar) => {
+      resetStarPosition(null, resetStar);
       score += 10;
       scoreText.text = `Score:${score}`;
     };
 
     this.physics.add.overlap(
-      star,
       rocket,
+      stars,
       handleCollectStar,
       undefined,
+      this,
     );
 
     this.physics.add.overlap(
-      star,
       resetBlock,
+      stars,
       resetStarPosition,
       undefined,
+      this,
     );
   }
 
   update() { //eslint-disable-line
     background.tilePositionY += 20;
-    star.angle += 2;
+    stars.children.iterate((star) => {
+      star.angle += 2;
+    });
   }
 }
 
