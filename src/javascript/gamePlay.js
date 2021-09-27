@@ -14,6 +14,7 @@ class GamePlay extends Phaser.Scene {
     this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 581 });
     this.load.image('rocket', './assets/img/rocket.png');
     this.load.image('star', './assets/img/star.png');
+    this.load.spritesheet('asteroid', './assets/spritesheet/asteroid.png', { frameWidth: 512, frameHeight: 385.5 });
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
   }
 
@@ -59,6 +60,18 @@ class GamePlay extends Phaser.Scene {
     }, this);
 
     const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+    const asteroid = this.physics.add.sprite(200, 300, 'asteroid', 0).setScale(0.45).setAngle(90);
+    asteroid.body.setSize(asteroid.width - 320, asteroid.height - 200, true).setOffset(150, -20);
+
+    this.anims.create({
+      key: 'asteroid',
+      frames: this.anims.generateFrameNumbers('asteroid'),
+      frameRate: 16,
+      repeat: -1,
+    });
+
+    asteroid.play('asteroid');
 
     stars = this.physics.add.group({
       key: 'star',
