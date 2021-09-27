@@ -15,7 +15,7 @@ class GameOver extends Phaser.Scene {
   create(score) {
     background = this.add.tileSprite(230, 320, 460, 640, 'background');
 
-    this.add.bitmapText(230, 50, 'press-start-2p', 'GameOver', 35).setOrigin(0.5);
+    this.add.bitmapText(230, 50, 'press-start-2p', 'GameOver', 38).setOrigin(0.5);
     this.add.bitmapText(230, 100, 'press-start-2p', 'YourScore', 25).setOrigin(0.5);
     this.add.bitmapText(230, 140, 'press-start-2p', `${score}`, 25).setOrigin(0.5);
 
