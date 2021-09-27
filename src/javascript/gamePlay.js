@@ -2,7 +2,6 @@ import Phaser from 'phaser';
 
 let background;
 let stars;
-let score;
 
 class GamePlay extends Phaser.Scene {
   constructor() {
@@ -19,7 +18,7 @@ class GamePlay extends Phaser.Scene {
   }
 
   create() {
-    score = 0;
+    let score = 0;
     background = this.add.tileSprite(230, 320, 460, 640, 'gamePlayBackground');
 
     const setRocketSpawnX = () => {
