@@ -61,9 +61,6 @@ class GamePlay extends Phaser.Scene {
 
     const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
-    const asteroid = this.physics.add.sprite(200, 300, 'asteroid', 0).setScale(0.48).setAngle(90);
-    asteroid.body.setSize(asteroid.width - 320, asteroid.height - 200, true).setOffset(150, -20);
-
     this.anims.create({
       key: 'asteroid',
       frames: this.anims.generateFrameNumbers('asteroid'),
@@ -71,7 +68,21 @@ class GamePlay extends Phaser.Scene {
       repeat: -1,
     });
 
-    asteroid.play('asteroid');
+    const asteroids = this.physics.add.group({
+      key: 'asteroid', 
+      repeat: 3,
+      setXY: { x: 230, y: 2500 }
+    })
+
+    asteroids.children.iterate(asteroid => {
+      asteroid.setScale(0.48)
+      asteroid.setAngle(90)
+      asteroid.body.setSize(asteroid.width - 320, asteroid.height - 200, true).setOffset(150, -20); 
+      asteroid.play('asteroid');
+      asteroid.x = randomNumber(50, 410);
+      asteroid.y = randomNumber(800, 2500);
+      asteroid.setVelocityY(randomNumber(-200, -1000));
+    })
 
     stars = this.physics.add.group({
       key: 'star',
@@ -82,12 +93,12 @@ class GamePlay extends Phaser.Scene {
     stars.children.iterate((star) => {
       star.setScale(0.085);
       star.body.setSize(star.width - 125, star.height - 125, true);
-      star.setVelocityY(randomNumber(-200, -700));
       star.x = randomNumber(50, 410);
       star.y = randomNumber(800, 2500);
+      star.setVelocityY(randomNumber(-200, -700));
     });
 
-    const resetBlock = this.add.rectangle(0, -50, 460, 18, 0x6666ff).setOrigin(0);
+    const resetBlock = this.add.rectangle(0, -150, 460, 18, 0x6666ff).setOrigin(0);
     this.physics.add.existing(resetBlock);
 
     const scoreText = this.add.bitmapText(10, 10, 'press-start-2p', `Score:${score}`, 27).setOrigin(0);
@@ -109,7 +120,6 @@ class GamePlay extends Phaser.Scene {
       stars,
       handleCollectStar,
       undefined,
-      this,
     );
 
     this.physics.add.overlap(
@@ -117,7 +127,19 @@ class GamePlay extends Phaser.Scene {
       stars,
       resetStarPosition,
       undefined,
-      this,
+    );
+
+    const resetAsteroidPosition = (object, resetAsteroid) => {
+      resetAsteroid.x = randomNumber(50, 410);
+      resetAsteroid.y = randomNumber(800, 2500);
+      resetAsteroid.setVelocityY(randomNumber(-200, -1000));
+    };
+
+    this.physics.add.overlap(
+      resetBlock,
+      asteroids,
+      resetAsteroidPosition,
+      undefined,
     );
   }
 
