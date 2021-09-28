@@ -8,8 +8,12 @@ import GameOver from './javascript/gameOver.js';
 
 const config = {
   type: Phaser.AUTO,
-  width: 460,
-  height: 640,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    width: 460,
+    height: 640,
+  },
   physics: {
     default: 'arcade',
     arcade: {
@@ -17,8 +21,7 @@ const config = {
       debug: true,
     },
   },
-  autoCenter: 1,
-  scaleMode: 3,
+
   scene: [GameSettings, GamePlay, MainMenu, LeaderBoard, GameOver],
 };
 
