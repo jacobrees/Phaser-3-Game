@@ -29,7 +29,7 @@ class GameSettings extends Phaser.Scene {
     this.add.bitmapText(230, 150, 'press-start-2p', 'FullScreen', 28).setOrigin(0.5);
 
     this.add.rectangle(230, 560, 255, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
-      .on('pointerdown', () => {
+      .on('pointerup', () => {
         this.scene.start('MainMenu');
       });
     this.add.bitmapText(230, 560, 'press-start-2p', 'MainMenu', 28).setOrigin(0.5);
