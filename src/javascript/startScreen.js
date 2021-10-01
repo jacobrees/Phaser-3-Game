@@ -16,7 +16,8 @@ class StartScreen extends Phaser.Scene {
     background = this.add.tileSprite(230, 320, 460, 640, 'background');
 
     this.add.bitmapText(230, 100, 'press-start-2p', 'Do You Want', 22).setOrigin(0.5);
-    this.add.bitmapText(230, 150, 'press-start-2p', 'Full-Screen Mode?', 22).setOrigin(0.5);
+    this.add.bitmapText(230, 130, 'press-start-2p', 'To Enter', 22).setOrigin(0.5);
+    this.add.bitmapText(230, 160, 'press-start-2p', 'FullScreen Mode?', 22).setOrigin(0.5);
 
     this.add.rectangle(230, 260, 255, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
       .on('pointerup', () => {
