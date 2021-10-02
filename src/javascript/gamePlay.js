@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import globalState from './globalState.js';
 
 let background;
 let stars;
@@ -17,9 +18,25 @@ class GamePlay extends Phaser.Scene {
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
     this.load.audio('pickup', './assets/audio/pickup.mp3');
     this.load.audio('explosion', './assets/audio/explosion.mp3');
+    this.load.audio('game-music', './assets/audio/tu-142.mp3');
   }
 
   create() {
+    const explosionSound = this.sound.add('explosion', { volume: 0.12 });
+    const pickupSound = this.sound.add('pickup', { volume: 0.12 });
+
+    const gameMusic = this.sound.add('game-music', { loop: true, volume: 0.08 });
+    if (globalState.music) {
+      gameMusic.play();
+    } else {
+      gameMusic.stop();
+    }
+
+    if (!globalState.effects) {
+      explosionSound.volume = 0;
+      pickupSound.volume = 0;
+    }
+
     let score = 0;
     background = this.add.tileSprite(230, 320, 460, 640, 'gamePlayBackground');
 
@@ -111,8 +128,6 @@ class GamePlay extends Phaser.Scene {
       resetStar.setVelocityY(randomNumber(-200, -700));
     };
 
-    const pickupSound = this.sound.add('pickup', { volume: 0.5 });
-
     const handleCollectStar = (object, resetStar) => {
       resetStarPosition(null, resetStar);
       pickupSound.play();
@@ -140,9 +155,8 @@ class GamePlay extends Phaser.Scene {
       resetAsteroid.setVelocityY(randomNumber(-200, -1000));
     };
 
-    const explosionSound = this.sound.add('explosion', { volume: 0.5 });
-
     const gameOver = () => {
+      gameMusic.stop();
       explosionSound.play();
       this.scene.start('GameOver', `${score}`);
     };
