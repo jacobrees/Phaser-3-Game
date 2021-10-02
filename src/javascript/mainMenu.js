@@ -24,19 +24,19 @@ class MainMenu extends Phaser.Scene {
     const rocketFlicker = this.add.sprite(134, 144, 'rocket-flicker', 0).setScale(0.25).setAngle(135);
 
     this.add.rectangle(230, 380, 248, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
-      .on('pointerup', () => {
+      .on('pointerdown', () => {
         this.scene.start('GameSettings');
       });
     this.add.bitmapText(230, 380, 'press-start-2p', 'Settings', 28).setOrigin(0.5);
 
     this.add.rectangle(230, 470, 327, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
-      .on('pointerup', () => {
+      .on('pointerdown', () => {
         this.scene.start('LeaderBoard');
       });
     this.add.bitmapText(230, 470, 'press-start-2p', 'LeaderBoard', 28).setOrigin(0.5);
 
     this.add.rectangle(230, 560, 277, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
-      .on('pointerup', () => {
+      .on('pointerdown', () => {
         this.scene.start('GamePlay');
       });
     this.add.bitmapText(230, 560, 'press-start-2p', 'StartGame', 28).setOrigin(0.5);
