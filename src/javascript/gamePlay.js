@@ -15,6 +15,8 @@ class GamePlay extends Phaser.Scene {
     this.load.image('star', './assets/img/star.png');
     this.load.spritesheet('asteroid', './assets/spritesheet/asteroid.png', { frameWidth: 512, frameHeight: 385.5 });
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
+    this.load.audio('pickup', './assets/audio/pickup.mp3');
+    this.load.audio('explosion', './assets/audio/explosion.mp3');
   }
 
   create() {
@@ -109,8 +111,11 @@ class GamePlay extends Phaser.Scene {
       resetStar.setVelocityY(randomNumber(-200, -700));
     };
 
+    const pickupSound = this.sound.add('pickup', { volume: 0.5 });
+
     const handleCollectStar = (object, resetStar) => {
       resetStarPosition(null, resetStar);
+      pickupSound.play();
       score += 10;
       scoreText.text = `Score:${score}`;
     };
@@ -135,7 +140,10 @@ class GamePlay extends Phaser.Scene {
       resetAsteroid.setVelocityY(randomNumber(-200, -1000));
     };
 
+    const explosionSound = this.sound.add('explosion', { volume: 0.5 });
+
     const gameOver = () => {
+      explosionSound.play();
       this.scene.start('GameOver', `${score}`);
     };
 
