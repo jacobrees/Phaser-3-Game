@@ -2,6 +2,8 @@ import Phaser from 'phaser';
 import globalState from './globalState.js';
 
 let background;
+let musicRectangle;
+let effectsRectangle;
 
 class GameSettings extends Phaser.Scene {
   constructor() {
@@ -47,6 +49,18 @@ class GameSettings extends Phaser.Scene {
   update() { //eslint-disable-line
     background.tilePositionY += 2;
     background.tilePositionX += 2;
+
+    if (globalState.music) {
+      musicRectangle.setFillStyle(0x6666ff, 1.0);
+    } else {
+      musicRectangle.setFillStyle(0x4E4F51, 1.0);
+    }
+
+    if (globalState.effects) {
+      effectsRectangle.setFillStyle(0x6666ff, 1.0);
+    } else {
+      effectsRectangle.setFillStyle(0x4E4F51, 1.0);
+    }
   }
 }
 
