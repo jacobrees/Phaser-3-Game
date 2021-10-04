@@ -44,7 +44,7 @@ class SetUsername extends Phaser.Scene {
 
     this.add.rectangle(230, 410, 277, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
       .on('pointerdown', () => {
-        this.scene.start('StartScreen');
+        this.scene.start('MainMenu');
       });
     this.add.bitmapText(230, 410, 'press-start-2p', 'Submit', 28).setOrigin(0.5);
   }
