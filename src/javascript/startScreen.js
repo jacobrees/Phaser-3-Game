@@ -23,9 +23,9 @@ class StartScreen extends Phaser.Scene {
       .on('pointerup', () => {
         if (!this.scale.isFullscreen) {
           this.scale.startFullscreen();
-          this.scene.start('MainMenu');
+          this.scene.start('SetUsername');
         } else {
-          this.scene.start('MainMenu');
+          this.scene.start('SetUsername');
         }
       }, this);
     this.add.bitmapText(230, 260, 'press-start-2p', 'Yes', 28).setOrigin(0.5);
@@ -34,9 +34,9 @@ class StartScreen extends Phaser.Scene {
       .on('pointerup', () => {
         if (this.scale.isFullscreen) {
           this.scale.stopFullscreen();
-          this.scene.start('MainMenu');
+          this.scene.start('SetUsername');
         } else {
-          this.scene.start('MainMenu');
+          this.scene.start('SetUsername');
         }
       }, this);
     this.add.bitmapText(230, 350, 'press-start-2p', 'No', 28).setOrigin(0.5);
