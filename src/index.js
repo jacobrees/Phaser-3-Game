@@ -1,6 +1,7 @@
 import './styles.scss';
 import Phaser from 'phaser';
 import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
+import InputTextPlugin from 'phaser3-rex-plugins/plugins/inputtext-plugin.js';
 import MainMenu from './javascript/mainMenu.js';
 import GamePlay from './javascript/gamePlay.js';
 import LeaderBoard from './javascript/leaderBoard.js';
@@ -21,6 +22,12 @@ const config = {
       plugin: RexUIPlugin,
       mapping: 'rexUI',
     }],
+    global: [{
+      key: 'rexInputTextPlugin',
+      plugin: InputTextPlugin,
+      start: true,
+    },
+    ],
   },
   scale: {
     mode: Phaser.Scale.FIT,

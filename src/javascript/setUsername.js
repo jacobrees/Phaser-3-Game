@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
+import InputText from 'phaser3-rex-plugins/plugins/inputtext.js';
 
 let background;
 let text;
-let bitmap;
 
 class SetUsername extends Phaser.Scene {
   constructor() {
@@ -27,17 +27,17 @@ class SetUsername extends Phaser.Scene {
     this.add.bitmapText(230, 260, 'press-start-2p', 'Type Username Here', 12).setOrigin(0.5);
 
     this.add.rectangle(230, 302, 285, 58, 0x6666ff);
+
     this.add.rectangle(232, 302, 285, 52, 0x121212).setInteractive().on('pointerdown', () => {
-      text.text = '';
       this.rexUI.edit(text);
     });
-    text = this.add.text(230, 2000, 'Username', {
-      fixedWidth: 0, fixedHeight: 0, fontSize: '37px', opacity: 1,
+    text = this.add.rexInputText(230, 305, 280, 40, {
+      type: 'text',
+      text: 'USERNAME',
+      fontSize: '37px',
     });
     text.setOrigin(0.5, 0.5);
-    text.alpha = 1;
-    text.setVisible(false);
-    bitmap = this.add.bitmapText(230, 300, 'press-start-2p', 'Username', 32).setOrigin(0.5);
+    //   text.resize(100, 100)
 
     this.add.rectangle(0, 302, 90, 52, 0x121212).setOrigin(0, 0.5);
     this.add.rectangle(80, 302, 10, 58, 0x6666ff).setOrigin(0, 0.5);
@@ -54,7 +54,6 @@ class SetUsername extends Phaser.Scene {
   update() { //eslint-disable-line
     background.tilePositionY += 2;
     background.tilePositionX += 2;
-    bitmap.text = text.text;
   }
 }
 
