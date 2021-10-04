@@ -21,9 +21,12 @@ class SetUsername extends Phaser.Scene {
     this.add.bitmapText(230, 130, 'press-start-2p', 'Characters a-z A-Z 0-9', 16).setOrigin(0.5);
     this.add.bitmapText(230, 170, 'press-start-2p', 'Username Can Only Be', 16).setOrigin(0.5);
     this.add.bitmapText(230, 200, 'press-start-2p', '3-8 Characters Long', 16).setOrigin(0.5);
-    this.add.rectangle(230, 300, 285, 52, 0x121212)
 
-    const text = this.add.text(230, 300, 'USERNAME', { fixedWidth: 260, fontSize: '37px' });
+    this.add.bitmapText(230, 260, 'press-start-2p', 'Type Username Here', 12).setOrigin(0.5);
+
+    this.add.rectangle(230, 300, 285, 52, 0x6666ff);
+    this.add.rectangle(232, 302, 285, 52, 0x121212);
+    const text = this.add.text(230, 300, '', { fixedWidth: 260, fontSize: '37px' });
     text.setOrigin(0.5, 0.5);
 
     text.setInteractive().on('pointerdown', () => {
