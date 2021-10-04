@@ -33,7 +33,6 @@ class SetUsername extends Phaser.Scene {
     });
     text = this.add.rexInputText(230, 305, 280, 40, {
       type: 'text',
-      text: 'USERNAME',
       fontSize: '32px',
     });
     text.setOrigin(0.5, 0.5);
