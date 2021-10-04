@@ -1,5 +1,6 @@
 import './styles.scss';
 import Phaser from 'phaser';
+import RexUIPlugin from 'phaser3-rex-plugins/templates/ui/ui-plugin.js';
 import MainMenu from './javascript/mainMenu.js';
 import GamePlay from './javascript/gamePlay.js';
 import LeaderBoard from './javascript/leaderBoard.js';
@@ -10,6 +11,13 @@ import SetUsername from './javascript/setUsername.js';
 
 const config = {
   type: Phaser.AUTO,
+  plugins: {
+    scene: [{
+      key: 'rexUI',
+      plugin: RexUIPlugin,
+      mapping: 'rexUI',
+    }],
+  },
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
