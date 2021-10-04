@@ -6,6 +6,7 @@ import LeaderBoard from './javascript/leaderBoard.js';
 import GameSettings from './javascript/gameSettings.js';
 import GameOver from './javascript/gameOver.js';
 import StartScreen from './javascript/startScreen.js';
+import SetUsername from './javascript/setUsername.js';
 
 const config = {
   type: Phaser.AUTO,
@@ -23,7 +24,7 @@ const config = {
     },
   },
 
-  scene: [StartScreen, GameSettings, GamePlay, MainMenu, LeaderBoard, GameOver],
+  scene: [SetUsername, StartScreen, GameSettings, GamePlay, MainMenu, LeaderBoard, GameOver],
 };
 
 const game = new Phaser.Game(config); //eslint-disable-line
