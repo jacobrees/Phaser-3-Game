@@ -11,6 +11,10 @@ import SetUsername from './javascript/setUsername.js';
 
 const config = {
   type: Phaser.AUTO,
+  parent: 'phaser-container',
+  dom: {
+    createContainer: true,
+  },
   plugins: {
     scene: [{
       key: 'rexUI',
