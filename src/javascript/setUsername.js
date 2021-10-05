@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import globalState from './globalState.js';
 
 let background;
 
@@ -72,10 +73,22 @@ class SetUsername extends Phaser.Scene {
             warningText.tint = 0xff0008;
           });
         } else {
+          globalState.username = text.text;
           this.scene.start('MainMenu');
         }
       });
-    this.add.bitmapText(230, 410, 'press-start-2p', 'Submit', 28).setOrigin(0.5);
+    
+
+    if (globalState.username !== undefined) {
+      this.add.rectangle(230, 560, 277, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
+        .on('pointerdown', () => {
+          this.scene.start('GameSettings');
+        });
+        this.add.bitmapText(230, 410, 'press-start-2p', 'Update', 28).setOrigin(0.5);
+        this.add.bitmapText(230, 560, 'press-start-2p', 'Cancel', 28).setOrigin(0.5);
+    } else {
+        this.add.bitmapText(230, 410, 'press-start-2p', 'Submit', 28).setOrigin(0.5);
+    }
   }
 
   update() { //eslint-disable-line
