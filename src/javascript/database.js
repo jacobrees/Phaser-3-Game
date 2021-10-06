@@ -17,7 +17,6 @@ const database = getDatabase(app);
 
 const postScore = (data) => {
   const postListRef = ref(database, 'scores');
-
   const newPostRef = push(postListRef);
 
   set(newPostRef, data);
