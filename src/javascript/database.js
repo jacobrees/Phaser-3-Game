@@ -11,7 +11,7 @@ const firebaseConfig = {
   measurementId: 'G-BVJF0Z3WE2',
 };
 
-const app = initializeApp(firebaseConfig); //eslint-disable-line
+const app = initializeApp(firebaseConfig);
 
 const database = getDatabase(app);
 
