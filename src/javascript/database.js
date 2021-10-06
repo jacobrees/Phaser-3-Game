@@ -20,7 +20,7 @@ const postScore = (data) => {
 
   const newPostRef = push(postListRef);
 
-  set(newPostRef, { data });
+  set(newPostRef, data);
 };
 
 // const databaseRef = ref(database, 'scores');
