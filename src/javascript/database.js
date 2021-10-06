@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'; //eslint-disable-line
-import { getDatabase, ref, onValue, push, set} from 'firebase/database'; //eslint-disable-line
+import { getDatabase, ref, push, set} from 'firebase/database'; //eslint-disable-line
 
 const firebaseConfig = {
   apiKey: 'AIzaSyA1cx1zT-jBq1vppzHGUzd-Jf4nYxw75Bs',
@@ -22,11 +22,5 @@ const postScore = (data) => {
 
   set(newPostRef, data);
 };
-
-// const databaseRef = ref(database, 'scores');
-
-// onValue(databaseRef, (snapshot) => {
-//   console.log(snapshot.val());
-// });
 
 export default postScore;
