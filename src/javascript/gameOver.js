@@ -1,4 +1,6 @@
 import Phaser from 'phaser';
+import postScore from './database.js';
+import globalState from './globalState.js';
 
 let background;
 
@@ -13,6 +15,11 @@ class GameOver extends Phaser.Scene {
   }
 
   create(score) {
+    postScore({
+      username: globalState.username,
+      score,
+    });
+
     background = this.add.tileSprite(230, 320, 460, 640, 'background');
 
     this.add.bitmapText(230, 50, 'press-start-2p', 'GameOver', 38).setOrigin(0.5);
