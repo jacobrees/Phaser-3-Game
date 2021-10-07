@@ -18,14 +18,14 @@ class GamePlay extends Phaser.Scene {
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
     this.load.audio('pickup', './assets/audio/pickup.mp3');
     this.load.audio('explosion', './assets/audio/explosion.mp3');
-    this.load.audio('game-music', './assets/audio/tu-142.mp3');
+    this.load.audio('game-music', './assets/audio/lada-uamee-x-professional-gopnik-x-boris-scloudtomp3downloader.com.mp3');
   }
 
   create() {
     const explosionSound = this.sound.add('explosion', { volume: 0.12 });
     const pickupSound = this.sound.add('pickup', { volume: 0.12 });
 
-    const gameMusic = this.sound.add('game-music', { loop: true, volume: 0.08 });
+    const gameMusic = this.sound.add('game-music', { loop: true, volume: 0.27 });
     if (globalState.music) {
       gameMusic.play();
     } else {
