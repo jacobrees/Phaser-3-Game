@@ -22,10 +22,10 @@ class GamePlay extends Phaser.Scene {
   }
 
   create() {
-    const explosionSound = this.sound.add('explosion', { volume: 0.57 });
-    const pickupSound = this.sound.add('pickup', { volume: 0.62 });
+    const explosionSound = this.sound.add('explosion', { volume: 0.36 });
+    const pickupSound = this.sound.add('pickup', { volume: 0.36 });
 
-    const gameMusic = this.sound.add('game-music', { loop: true, volume: 0.40 });
+    const gameMusic = this.sound.add('game-music', { loop: true, volume: 0.24 });
     if (globalState.music) {
       gameMusic.play();
     } else {
