@@ -14,8 +14,7 @@ class GameOver extends Phaser.Scene {
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
   }
 
-  create() {
-    const score = 120;
+  create(score) {
     const num = 15;
     const x = 10;
     postScore({
