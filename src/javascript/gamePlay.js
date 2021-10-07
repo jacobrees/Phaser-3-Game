@@ -22,7 +22,7 @@ class GamePlay extends Phaser.Scene {
   }
 
   create() {
-    const masterVolume = -0.13;
+    const masterVolume = -0.05;
     const explosionSound = this.sound.add('explosion', { volume: 0.19 + masterVolume });
     const pickupSound = this.sound.add('pickup', { volume: 0.18 + masterVolume });
 
