@@ -1,7 +1,7 @@
 const globalState = {
   music: true,
   effects: true,
-  username: undefined,
+  username: 'jacob',
 };
 
 export default globalState;
