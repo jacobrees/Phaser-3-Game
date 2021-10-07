@@ -42,7 +42,7 @@ const config = {
     },
   },
 
-  scene: [GameOver, GamePlay, SetUsername, GameSettings, MainMenu, LeaderBoard],
+  scene: [LeaderBoard, GameOver, GamePlay, SetUsername, GameSettings, MainMenu],
 };
 
 const game = new Phaser.Game(config); //eslint-disable-line
