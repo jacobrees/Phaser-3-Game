@@ -33,8 +33,9 @@ class GameOver extends Phaser.Scene {
     this.add.bitmapText(260, 195 - num, 'press-start-2p', 'Score', 16).setOrigin(0);
 
     this.add.rectangle(230, 220 - num, 460, 4, 0xffffff);
-    this.add.rectangle(70, 220 - num, 4, 210, 0xffffff).setOrigin(0);
-    this.add.rectangle(245, 220 - num, 4, 210, 0xffffff).setOrigin(0);
+    this.add.rectangle(70, 220 - num, 4, 220, 0xffffff).setOrigin(0);
+    this.add.rectangle(245, 220 - num, 4, 220, 0xffffff).setOrigin(0);
+    this.add.rectangle(230, 440 - num, 460, 4, 0xffffff);
 
     this.add.bitmapText(10, 230 - num, 'press-start-2p', '1st', 16).setOrigin(0);
     this.add.bitmapText(10, 260 - num, 'press-start-2p', '2nd', 16).setOrigin(0);
