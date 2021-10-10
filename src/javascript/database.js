@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import {
-  getDatabase, ref, set, push,
+  getDatabase, ref, set, push, onValue,
 } from 'firebase/database';
 import globalState from './globalState.js';
 
@@ -31,4 +31,20 @@ const postScore = (score) => {
   set(newPostRef, { username: globalState.username, score });
 };
 
-export default postScore;
+const getScores = () => {
+  const db = getDatabase(app);
+  const listRef = ref(db, 'scores');
+  let data;
+  onValue(listRef, (snapshot) => {
+    data = snapshot.val();
+  });
+  return data;
+};
+
+const printScores = (data) => {
+  console.log(data);
+};
+
+getScores();
+
+export { postScore, printScores, getScores };

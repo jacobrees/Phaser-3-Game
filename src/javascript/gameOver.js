@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import postScore from './database.js';
+import { postScore, getScores, printScores } from './database.js';
 
 let background;
 
@@ -33,6 +33,8 @@ class GameOver extends Phaser.Scene {
     this.add.rectangle(70 + x, 180 - num, 1, 270, 0xffffff).setOrigin(0);
     this.add.rectangle(245 + x, 180 - num, 1, 270, 0xffffff).setOrigin(0);
     this.add.rectangle(230, 450 - num, 460, 1, 0xffffff);
+
+    printScores(getScores());
 
     let y = 220;
     let exampleScore = 1120;
