@@ -31,10 +31,7 @@ class LeaderBoard extends Phaser.Scene {
     this.add.rectangle(245 + x, 180 - num, 1, 440, 0xffffff).setOrigin(0);
     this.add.rectangle(230, 620 - num, 460, 1, 0xffffff);
 
-    console.log(getScores().slice(0, 13));
-
     let y = 130;
-    let exampleScore = 1120;
     for (let i = 0; i < 13; i += 1) {
       const arrRanks = ['st', 'nd', 'rd'];
 
@@ -44,12 +41,11 @@ class LeaderBoard extends Phaser.Scene {
         this.add.bitmapText(10, y, 'press-start-2p', `${i + 1}th`, 16).setOrigin(0);
       }
 
-      this.add.bitmapText(85 + x, y, 'press-start-2p', 'Jacob', 16).setOrigin(0);
+      this.add.bitmapText(85 + x, y, 'press-start-2p', `${getScores().slice(0, 13)[i].username}`, 16).setOrigin(0);
 
-      this.add.bitmapText(260 + x, y, 'press-start-2p', exampleScore, 16).setOrigin(0);
+      this.add.bitmapText(260 + x, y, 'press-start-2p', `${getScores().slice(0, 13)[i].score}`, 16).setOrigin(0);
 
       y += 30;
-      exampleScore -= 30;
     }
 
     this.add.rectangle(230, 560, 255, 52, 0x6666ff).setInteractive({ cursor: 'pointer' })
