@@ -4,11 +4,6 @@ import {
 } from 'firebase/database';
 import globalState from './globalState.js';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyA1cx1zT-jBq1vppzHGUzd-Jf4nYxw75Bs',
   authDomain: 'phaser-3-game-94b32.firebaseapp.com',
@@ -20,7 +15,6 @@ const firebaseConfig = {
   measurementId: 'G-B6L6NBNLW7',
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const postScore = (score) => {
