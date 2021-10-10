@@ -35,8 +35,7 @@ const getScores = () => {
     });
   });
 
-  return array.sort((a, b) => ((a.score < b.score) ? 1 : -1))
-    .slice(0, 7);
+  return array.sort((a, b) => ((a.score < b.score) ? 1 : -1));
 };
 
 getScores();

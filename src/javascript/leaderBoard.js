@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { getScores } from './database.js';
 
 let background;
 
@@ -29,6 +30,8 @@ class LeaderBoard extends Phaser.Scene {
     this.add.rectangle(70 + x, 180 - num, 1, 440, 0xffffff).setOrigin(0);
     this.add.rectangle(245 + x, 180 - num, 1, 440, 0xffffff).setOrigin(0);
     this.add.rectangle(230, 620 - num, 460, 1, 0xffffff);
+
+    console.log(getScores().slice(0, 13));
 
     let y = 130;
     let exampleScore = 1120;
