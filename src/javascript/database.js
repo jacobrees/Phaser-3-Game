@@ -1,5 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set } from 'firebase/database';
+import {
+  getDatabase, ref, set, push,
+} from 'firebase/database';
 import globalState from './globalState.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -23,10 +25,10 @@ const app = initializeApp(firebaseConfig);
 
 const postScore = (score) => {
   const db = getDatabase(app);
-  set(ref(db, 'scores'), {
-    username: globalState.username,
-    score,
-  });
+  const postListRef = ref(db, 'scores');
+  const newPostRef = push(postListRef);
+
+  set(newPostRef, { username: globalState.username, score });
 };
 
 export default postScore;
