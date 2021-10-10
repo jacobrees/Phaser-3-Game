@@ -96,7 +96,7 @@ class SetUsername extends Phaser.Scene {
     }
   }
 
-  update() { //eslint-disable-line
+  update() {
     background.tilePositionY += 2;
     background.tilePositionX += 2;
   }

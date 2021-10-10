@@ -65,7 +65,7 @@ class GameOver extends Phaser.Scene {
     this.add.bitmapText(230, 480, 'press-start-2p', 'PlayAgain', 28).setOrigin(0.5);
   }
 
-  update() { //eslint-disable-line
+  update() {
     background.tilePositionY += 2;
     background.tilePositionX += 2;
   }

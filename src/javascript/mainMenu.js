@@ -51,7 +51,7 @@ class MainMenu extends Phaser.Scene {
     rocketFlicker.play('rocketFlicker');
   }
 
-  update() { //eslint-disable-line
+  update() {
     background.tilePositionY += 7;
     background.tilePositionX += 7;
   }

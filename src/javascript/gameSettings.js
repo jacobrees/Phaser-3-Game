@@ -46,7 +46,7 @@ class GameSettings extends Phaser.Scene {
     this.add.bitmapText(230, 560, 'press-start-2p', 'MainMenu', 28).setOrigin(0.5);
   }
 
-  update() { //eslint-disable-line
+  update() {
     background.tilePositionY += 2;
     background.tilePositionX += 2;
 

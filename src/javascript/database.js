@@ -1,7 +1,7 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app'; //eslint-disable-line
 import {
   getDatabase, ref, set, push, onValue,
-} from 'firebase/database';
+} from 'firebase/database'; //eslint-disable-line
 import globalState from './globalState.js';
 
 const firebaseConfig = {

@@ -176,7 +176,7 @@ class GamePlay extends Phaser.Scene {
     );
   }
 
-  update() { //eslint-disable-line
+  update() {
     background.tilePositionY += 20;
     stars.children.iterate((star) => {
       star.angle += 2;
