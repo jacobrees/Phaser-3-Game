@@ -6,7 +6,7 @@
 
 ![](screenshot/screenshot.png)
 
-# Live Preview
+# Live Website
 
 ### [View Website](https://frosty-goldstine-e40f2f.netlify.app/)
 
