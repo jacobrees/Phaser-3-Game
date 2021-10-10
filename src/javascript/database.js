@@ -28,17 +28,17 @@ const postScore = (score) => {
 const getScores = () => {
   const db = getDatabase(app);
   const listRef = ref(db, 'scores');
-  let data;
+  const array = [];
   onValue(listRef, (snapshot) => {
-    data = snapshot.val();
+    snapshot.forEach((childSnapshot) => {
+      array.push(childSnapshot.val());
+    });
   });
-  return data;
-};
 
-const printScores = (data) => {
-  console.log(data);
+  return array.sort((a, b) => ((a.score < b.score) ? 1 : -1))
+    .slice(0, 7);
 };
 
 getScores();
 
-export { postScore, printScores, getScores };
+export { postScore, getScores };
