@@ -22,7 +22,7 @@ $ cd <folder>
 $ git clone git@github.com:jacobrees/Phaser-3-Game.git
 ```
 
-To launch an instance of this app. Inside your terminal, you will need to navigate into the repository you have just cloned. You will then need to navigate inside of the dist directory. You will do this by using `cd` inside of your terminal. 
+To launch an instance of this app. Inside your terminal, you will need to navigate into the repository you have just cloned. You will do this by using `cd` inside of your terminal. 
 
 Once you are inside of this folder run the command `npm install` to install all dependencies & `npm start` to open the project in Google Chrome on a development server. 
 
