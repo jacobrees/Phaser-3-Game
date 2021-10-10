@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import postScore from './database.js';
 
 let background;
 
@@ -13,6 +14,7 @@ class GameOver extends Phaser.Scene {
   }
 
   create(score) {
+    postScore(score);
     const num = 15;
     const x = 10;
 
