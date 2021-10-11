@@ -17,23 +17,23 @@ class Preload extends Phaser.Scene {
     }).setOrigin(0.5);
 
     const loadingBar = this.add.graphics({ fillStyle: { color: 0xffffff } });
-    let text = this.make.text({
-        x: 460 / 2,
-        y: 640 / 2 + 100,
-        text: ``,
-        style: {
-          font: '25px monospace',
-          fill: '#ffffff',
-        },
-      }).setOrigin(0.5);
-        this.load.on('progress', (percent) => {
-          loadingBar.fillRect(0, 340, 460 * percent, 50);
-          text.text = `${(percent.toFixed(2) * 100).toFixed(0)}%`
-        });
-    
-        this.load.on('complete', () => {
-          this.scene.start('SetUsername');
-        });
+    const text = this.make.text({
+      x: 460 / 2,
+      y: 640 / 2 + 100,
+      text: '',
+      style: {
+        font: '25px monospace',
+        fill: '#ffffff',
+      },
+    }).setOrigin(0.5);
+    this.load.on('progress', (percent) => {
+      loadingBar.fillRect(0, 340, 460 * percent, 50);
+      text.text = `${(percent.toFixed(2) * 100).toFixed(0)}%`;
+    });
+
+    this.load.on('complete', () => {
+      this.scene.start('SetUsername');
+    });
 
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
     this.load.image('gamePlayBackground', './assets/img/game-play-background.png');
@@ -45,8 +45,6 @@ class Preload extends Phaser.Scene {
     this.load.audio('explosion', './assets/audio/explosion.mp3');
     this.load.audio('game-music', './assets/audio/tu-142.mp3');
     this.load.image('background', './assets/img/menu-background.png');
-
-
   }
 
   create() {
