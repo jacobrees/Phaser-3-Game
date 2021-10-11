@@ -6,16 +6,35 @@ class Preload extends Phaser.Scene {
   }
 
   preload() {
-    const loadingText = this.make.text({
+    this.make.text({
       x: 460 / 2,
-      y: 640 / 2 - 60,
+      y: 640 / 2 - 40,
       text: 'LOADING...',
       style: {
         font: '25px monospace',
         fill: '#ffffff',
       },
-    });
-    loadingText.setOrigin(0.5, 0.5);
+    }).setOrigin(0.5);
+
+    const loadingBar = this.add.graphics({ fillStyle: { color: 0xffffff } });
+    let text = this.make.text({
+        x: 460 / 2,
+        y: 640 / 2 + 100,
+        text: ``,
+        style: {
+          font: '25px monospace',
+          fill: '#ffffff',
+        },
+      }).setOrigin(0.5);
+        this.load.on('progress', (percent) => {
+          loadingBar.fillRect(0, 340, 460 * percent, 50);
+          text.text = `${(percent.toFixed(2) * 100).toFixed(0)}%`
+        });
+    
+        this.load.on('complete', () => {
+          this.scene.start('SetUsername');
+        });
+
     this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
     this.load.image('gamePlayBackground', './assets/img/game-play-background.png');
     this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 581 });
@@ -27,15 +46,7 @@ class Preload extends Phaser.Scene {
     this.load.audio('game-music', './assets/audio/tu-142.mp3');
     this.load.image('background', './assets/img/menu-background.png');
 
-    const loadingBar = this.add.graphics({ fillStyle: { color: 0xffffff } });
 
-    this.load.on('progress', (percent) => {
-      loadingBar.fillRect(0, 340, 460 * percent, 50);
-    });
-
-    this.load.on('complete', () => {
-      this.scene.start('SetUsername');
-    });
   }
 
   create() {
