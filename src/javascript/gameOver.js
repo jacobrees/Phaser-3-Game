@@ -8,11 +8,6 @@ class GameOver extends Phaser.Scene {
     super({ key: 'GameOver' });
   }
 
-  preload() {
-    this.load.image('background', './assets/img/menu-background.png');
-    this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
-  }
-
   create(score) {
     postScore(Number(score));
     const num = 15;

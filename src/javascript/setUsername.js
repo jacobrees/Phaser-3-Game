@@ -8,11 +8,6 @@ class SetUsername extends Phaser.Scene {
     super({ key: 'SetUsername' });
   }
 
-  preload() {
-    this.load.image('background', './assets/img/menu-background.png');
-    this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
-  }
-
   create() {
     background = this.add.tileSprite(230, 320, 460, 640, 'background');
 

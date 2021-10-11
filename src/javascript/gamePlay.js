@@ -9,18 +9,6 @@ class GamePlay extends Phaser.Scene {
     super({ key: 'GamePlay' });
   }
 
-  preload() {
-    this.load.image('gamePlayBackground', './assets/img/game-play-background.png');
-    this.load.spritesheet('rocket-flicker', './assets/spritesheet/rocket-flicker.png', { frameWidth: 256, frameHeight: 581 });
-    this.load.image('rocket', './assets/img/rocket.png');
-    this.load.image('star', './assets/img/star.png');
-    this.load.spritesheet('asteroid', './assets/spritesheet/asteroid.png', { frameWidth: 512, frameHeight: 385.5 });
-    this.load.bitmapFont('press-start-2p', './assets/bitmap/PressStart2P.png', './assets/bitmap/PressStart2P.xml');
-    this.load.audio('pickup', './assets/audio/pickup.mp3');
-    this.load.audio('explosion', './assets/audio/explosion.mp3');
-    this.load.audio('game-music', './assets/audio/tu-142.mp3');
-  }
-
   create() {
     const masterVolume = -0.05;
     const explosionSound = this.sound.add('explosion', { volume: 0.19 + masterVolume });
