@@ -6,7 +6,6 @@ env:
   FORCE_COLOR: 1
 
 jobs:
-  lighthouse:
   webhint:
     name: Webhint
     runs-on: ubuntu-18.04
