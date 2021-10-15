@@ -17,7 +17,7 @@ class Preload extends Phaser.Scene {
     }).setOrigin(0.5);
 
     const loadingBar = this.add.graphics({ fillStyle: { color: 0xffffff } });
-    const text = this.make.text({
+    const percentText = this.make.text({
       x: 460 / 2,
       y: 640 / 2 + 100,
       text: '',
@@ -28,7 +28,30 @@ class Preload extends Phaser.Scene {
     }).setOrigin(0.5);
     this.load.on('progress', (percent) => {
       loadingBar.fillRect(0, 340, 460 * percent, 50);
-      text.text = `${(percent.toFixed(2) * 100).toFixed(0)}%`;
+      percentText.text = `${(percent.toFixed(2) * 100).toFixed(0)}%`;
+    });
+
+    this.make.text({
+      x: 460 / 2,
+      y: 640 / 2 + 147,
+      text: 'loading asset:',
+      style: {
+        font: '25px monospace',
+        fill: '#ffffff',
+      },
+    }).setOrigin(0.5);
+
+    const fileText = this.make.text({
+      x: 460 / 2,
+      y: 640 / 2 + 180,
+      text: '',
+      style: {
+        font: '25px monospace',
+        fill: '#ffffff',
+      },
+    }).setOrigin(0.5);
+    this.load.on('fileprogress', (file) => {
+      fileText.text = `${file.key}`;
     });
 
     this.load.on('complete', () => {
