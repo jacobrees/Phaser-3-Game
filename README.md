@@ -89,5 +89,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Code linters used within this project have been developed by Microverse
+- Code linters used within this project have been supplied by Microverse
 - Music by [uamee](https://soundcloud.com/uamee)
