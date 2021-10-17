@@ -30,6 +30,7 @@ class GameOver extends Phaser.Scene {
     this.add.rectangle(230, 450 - num, 460, 1, 0xffffff);
 
     let y = 220;
+    const getScoreBoard = getScores().slice(0, 7);
     for (let i = 0; i < 7; i += 1) {
       const arrRanks = ['st', 'nd', 'rd'];
 
@@ -39,9 +40,9 @@ class GameOver extends Phaser.Scene {
         this.add.bitmapText(10, y, 'press-start-2p', `${i + 1}th`, 16).setOrigin(0);
       }
 
-      this.add.bitmapText(85 + x, y, 'press-start-2p', `${getScores().slice(0, 7)[i].username}`, 16).setOrigin(0);
+      this.add.bitmapText(85 + x, y, 'press-start-2p', `${getScoreBoard[i].username}`, 16).setOrigin(0);
 
-      this.add.bitmapText(260 + x, y, 'press-start-2p', `${getScores().slice(0, 7)[i].score}`, 16).setOrigin(0);
+      this.add.bitmapText(260 + x, y, 'press-start-2p', `${getScoreBoard[i].score}`, 16).setOrigin(0);
 
       y += 30;
     }
