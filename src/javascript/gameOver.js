@@ -30,7 +30,6 @@ class GameOver extends Phaser.Scene {
     this.add.rectangle(230, 450 - num, 460, 1, 0xffffff);
 
     let y = 220;
-    getScores().slice(0, 7);
     for (let i = 0; i < 7; i += 1) {
       const arrRanks = ['st', 'nd', 'rd'];
 
