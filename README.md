@@ -77,8 +77,6 @@ $ npm run build
 
 - Github: [@jacobrees](https://github.com/jacobrees)
 - Linkedin: [jacob-rees-a6507b1a6](https://www.linkedin.com/in/jacob-rees-a6507b1a6/)
-> Contact me if you notice any bugs.
-
 
 ## 🤝 Contributing
 
